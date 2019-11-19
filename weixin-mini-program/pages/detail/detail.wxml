@@ -1,0 +1,46 @@
+<view class="page">
+    <!-- <view class="page__hd">
+        <view class="page__title"></view>
+    </view> -->
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-article">
+            <view class="weui-article__h1">{{detail.title}}</view>
+            <view class="weui-article__section">
+                <!-- <view class="weui-article__title">{{item.bookTitle}}</view> -->
+                <view class="weui-article__section">
+                    <view class="weui-article__h3 hh">责任者:</view>
+                    <view class="weui-article__p">{{detail.author}}</view>
+                    <!-- <view class="weui-article__p">
+                        <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFit" style="height: 180px" />
+                    </view> -->
+                    <view class="weui-article__h3 hh">出版发行项:</view>
+                    <view class="weui-article__p">{{detail.publisher}}</view>
+                    <view class="weui-article__h3 hh">提要文摘附注:</view>
+                    <view class="weui-article__p">{{detail.summary}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-flex">
+            <view class="weui-flex__item">
+                <view class="placeholder2">索书号</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder2">馆藏地</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder2">书刊状态</view>
+            </view>
+        </view>
+        <view class="weui-flex" wx:for="{{detail.collection}}">
+            <view class="weui-flex__item">
+                <view class="placeholder">{{item.callNumber}}</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder">{{item.collectionSite}}</view>
+            </view>
+            <view class="weui-flex__item">
+                <view class="placeholder">{{item.state}}</view>
+            </view>
+        </view>
+    </view>
+</view>

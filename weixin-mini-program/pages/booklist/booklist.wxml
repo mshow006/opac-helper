@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="page panel js_show">
+    <view class="weui-panel">
+      <view class="weui-panel__hd">{{resultSum}}</view>
+      <view class="weui-panel__bd" wx:if="{{!isNull}}" wx:for="{{booklist}}">
+        <view class="weui-media-box weui-media-box_text border-bottom" bindtap="GetDetail" id="{{item.uid}}">
+          <h4 class="weui-media-box__desc">
+            <b>{{item.title}}</b>
+          </h4>
+          <p class="weui-media-box__desc">{{item.authorPublisher}}</p>
+            <p class="weui-media-box__desc">{{item.callNum}}</p>
+          <!-- <ul class="weui-media-box__info"> -->
+            <!-- <li class="weui-media-box__info__meta">{{item.collectionNum}}</li> -->
+            <!-- <li class="weui-media-box__info__meta weui-media-box__info__meta_extra"> -->
+              <!-- {{item.doctype}} -->
+            <!-- </li> -->
+          <!-- </ul> -->
+        </view>
+      </view>
+      <!-- <view class="page__ft">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <button class="weui-btn weui-btn_mini weui-btn_disabled weui-btn_primary">页面主操作</button>
+          </view>
+          <view class="weui-flex__item">
+            <button class="weui-btn weui-btn_mini weui-btn_primary">页面主操作</button>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+</view>

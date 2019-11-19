@@ -1,0 +1,29 @@
+# opac-helper Common Config
+
+############################# 访问路径、端口tomcat start ############################
+server:
+  port: 18080
+  servlet:
+    context-path: /api
+  tomcat:
+    max-threads: 1000
+    min-spare-threads: 30
+    uri-encoding: UTF-8
+############################# 访问路径、端口tomcat end ##############################
+
+################################ spring config start ###############################
+spring:
+  application:
+    name: opac-helper
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  jackson:
+    date-format: yyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  banner:
+    charset: UTF-8
+    location: classpath:config/banner.txt
+################################ spring config end ###############################

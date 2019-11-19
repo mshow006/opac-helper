@@ -1,0 +1,50 @@
+@import "/style/weui.wxss";
+
+.page__hd{
+    padding: 8px 10px;
+  }
+  
+  .img{
+    display: block;
+    height: 300rpx;
+    width: auto;
+  }
+  .img_search{
+    display: block;
+    height: 100rpx;
+    width: auto;
+  }
+  
+  .weui-select:before{
+    content:" ";
+    display:inline-block;
+    height:6px;
+    width:6px;
+    border-width:2px 2px 0 0;
+    border-color:#c8c8cd;
+    border-style:solid;
+    -webkit-transform:matrix(.71,.71,-.71,.71,0,0);
+    transform:matrix(.71,.71,-.71,.71,0,0);
+    position:relative;
+    top:-2px;
+    position:absolute;
+    top:50%;
+    right:15px;
+    margin-top:-4px
+  }
+
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}

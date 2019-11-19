@@ -1,0 +1,3 @@
+.weui-media-box__title{word-wrap:normal;word-wrap:break-word;word-break:break-all}
+b{font-weight: bold;color: #054ec3}
+.border-bottom{border-bottom: 1px dashed #ccc}

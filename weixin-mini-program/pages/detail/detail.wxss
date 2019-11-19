@@ -1,0 +1,23 @@
+.placeholder{
+    margin: 5px auto;
+    padding: 0 10px;
+    font-size: 25rpx;
+    text-align: center;
+    height: 4.6em;
+    background-color: #EBEBEB;
+    line-height: 2.3em;
+    color: #000000;
+}
+.placeholder2{
+    margin: 5px auto;
+    padding: 0 10px;
+    font-size: 25rpx;
+    text-align: center;
+    /* background-color: #EBEBEB; */
+    height: 2.3em;
+    line-height: 2.3em;
+    color: #000000;
+}
+.hh{
+    font-weight: bold
+}
