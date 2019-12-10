@@ -7,6 +7,7 @@ App({
     // wx.setStorageSync('logs', logs)
   },
   globalData: {
-    url: "http://localhost:18080/api",
+    // url: "http://localhost:18080/api",
+    url: "https://api.yingming006.cn/api",
   }
 })

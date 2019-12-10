@@ -95,7 +95,7 @@ public class SearchServiceImpl implements SearchService {
 
                 books.add(book);
             }
-            bookList.setTitle(field.getTitle());
+            bookList.setTitle(field.getInputVal());
             bookList.setCurrentPage(Integer.valueOf(currentPage));
             bookList.setPageSize(Integer.valueOf(pageSize));
             bookList.setResultSum(resultSum);

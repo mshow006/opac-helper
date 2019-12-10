@@ -10,7 +10,7 @@
     </parent>
     <groupId>cn.yingming006</groupId>
     <artifactId>opac-helper</artifactId>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
     <name>opac-helper</name>
     <description>opac helper</description>
 

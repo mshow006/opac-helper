@@ -1,31 +1,62 @@
-<view class="section">
-    <view class="page__hd">
-        <image class="img" src="../../images/banner.png" />
-    </view>
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">检索条件：{{array[index]}}</view>
-  </picker>
-  <!-- <view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell weui-cell_input">
-      <input type="text" class="weui-input" maxlength="100" placeholder="输入图书关键字" />
-    </view>
-  </view> -->
-  <view class="weui-search-bar">
-    <view class="weui-search-bar__form">
-      <view class="weui-search-bar__box">
-        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-        <input type="text" class="weui-search-bar__input" confirm-type="search" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="inputTyping" />
-        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-          <icon type="clear" size="14"></icon>
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <view class="page__hd">
+    <image class="img" src="../../images/banner.png" />
+  </view>
+
+  <view class="weui-cells__title"></view>
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd" style="width: 105px">
+          <picker bindchange="bindTypePickerChange" value="{{typeIndex}}" range="{{typeNameItems}}">
+            <view class="weui-select">{{typeNameItems[typeIndex]}}</view>
+          </picker>
+        </view>
+        <view class="weui-cell__bd weui-cell__bd_in-select-before">
+          <input type="text" class="weui-input" confirm-type="search" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="inputConfirm" placeholder="请输入关键字" />
         </view>
       </view>
-      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-        <icon class="weui-icon-search" type="search" size="14"></icon>
-        <view class="weui-search-bar__text">输入图书关键字</view>
-      </label>
     </view>
-    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">
-      取消
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="btnConfirm">检索</button>
     </view>
+    <view class="weui-btn-area">
+      <button wx:if="{{ hasMore }}" class="weui-btn" type="primary" bindtap="btnMoreOption">关闭选项</button>
+      <button wx:else class="weui-btn" type="primary" bindtap="btnMoreOption">更多选项</button>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title" hidden="{{!hasMore}}">
+      <view class="weui-cells__title">排序方式</view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd">
+          <picker bindchange="bindOrderTypePickerChange" value="{{orderTypeIndex}}" range="{{orderTypeNameItems}}">
+            <view class="weui-select">{{orderTypeNameItems[orderTypeIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__bd">
+          <picker bindchange="bindOrderPickerChange" value="{{orderIndex}}" range="{{orderNameItems}}">
+            <view class="weui-select">{{orderNameItems[orderIndex]}}</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">显示电子书刊</view>
+        <view class="weui-cell__ft">
+          <switch bindchange="bindEBookSwitchChange" checked="{{withEBook}}" />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">只显示可借图书</view>
+        <view class="weui-cell__ft">
+          <switch bindchange="bindOnlySwitchChange" checked="{{onlyEnable}}" />
+        </view>
+      </view>
+    </view>
+
   </view>
 </view>

@@ -22,8 +22,8 @@ public class SearchController {
      * @return String
      */
 
-    @GetMapping("/simpleSearch")
-    public String search(@ModelAttribute RequestField field) {
+    @PostMapping("/simpleSearch")
+    public String search(@RequestBody RequestField field) {
         return searchService.simpleSearch(field);
     }
 

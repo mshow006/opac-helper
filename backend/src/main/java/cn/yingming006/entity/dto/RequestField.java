@@ -1,7 +1,5 @@
 package cn.yingming006.entity.dto;
 
-import org.springframework.context.annotation.Bean;
-
 /**
  * 搜索请求字段
  * <p>
@@ -9,105 +7,60 @@ import org.springframework.context.annotation.Bean;
  */
 
 public class RequestField {
-    private String title = "";
-    private String author = "";
-    private String keyword = "";
-    private String isbn = "";
-    private String asordno = "";
-    private String coden = "";
-    private String callno = "";
-    private String publisher = "";
-    private String series = "";
-    private String tpinyin = "";
-    private String apinyin = "";
+    private String strSearchType = "";
+    private String inputVal = "";
+    private String sort = "";
+    private String orderBy = "";
+    private String onlyEnable = "";
+    private String withEBook = "";
     private String page = "1";
 
-    public String getTitle() {
-        return title;
+    public String getStrSearchType() {
+        return strSearchType;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setStrSearchType(String strSearchType) {
+        this.strSearchType = strSearchType;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getInputVal() {
+        return inputVal;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setInputVal(String inputVal) {
+        this.inputVal = inputVal;
     }
 
-    public String getKeyword() {
-        return keyword;
+    public String getSort() {
+        return sort;
     }
 
-    public void setKeyword(String keyword) {
-        this.keyword = keyword;
+    public void setSort(String sort) {
+        this.sort = sort;
     }
 
-    public String getIsbn() {
-        return isbn;
+    public String getOrderBy() {
+        return orderBy;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setOrderBy(String orderBy) {
+        this.orderBy = orderBy;
     }
 
-    public String getAsordno() {
-        return asordno;
+    public String getOnlyEnable() {
+        return onlyEnable;
     }
 
-    public void setAsordno(String asordno) {
-        this.asordno = asordno;
+    public void setOnlyEnable(String onlyEnable) {
+        this.onlyEnable = onlyEnable;
     }
 
-    public String getCoden() {
-        return coden;
+    public String getWithEBook() {
+        return withEBook;
     }
 
-    public void setCoden(String coden) {
-        this.coden = coden;
-    }
-
-    public String getCallno() {
-        return callno;
-    }
-
-    public void setCallno(String callno) {
-        this.callno = callno;
-    }
-
-    public String getPublisher() {
-        return publisher;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public String getSeries() {
-        return series;
-    }
-
-    public void setSeries(String series) {
-        this.series = series;
-    }
-
-    public String getTpinyin() {
-        return tpinyin;
-    }
-
-    public void setTpinyin(String tpinyin) {
-        this.tpinyin = tpinyin;
-    }
-
-    public String getApinyin() {
-        return apinyin;
-    }
-
-    public void setApinyin(String apinyin) {
-        this.apinyin = apinyin;
+    public void setWithEBook(String withEBook) {
+        this.withEBook = withEBook;
     }
 
     public String getPage() {
@@ -118,19 +71,29 @@ public class RequestField {
         this.page = page;
     }
 
+    public String toString1() {
+        return "RequestField{" +
+                "strSearchType='" + strSearchType + '\'' +
+                ", inputVal='" + inputVal + '\'' +
+                ", sort='" + sort + '\'' +
+                ", orderBy='" + orderBy + '\'' +
+                ", onlyEnable='" + onlyEnable + '\'' +
+                ", withEBook='" + withEBook + '\'' +
+                ", page='" + page + '\'' +
+                '}';
+    }
+
     @Override
     public String toString() {
-        return "title=" + title +
-                "&author=" + author +
-                "&keyword=" + keyword +
-                "&isbn=" + isbn +
-                "&asordno=" + asordno +
-                "&coden=" + coden +
-                "&callno=" + callno +
-                "&publisher=" + publisher +
-                "&series=" + series +
-                "&tpinyin=" + tpinyin +
-                "&apinyin=" + apinyin +
-                "&page=" + page;
+        StringBuilder sb = new StringBuilder();
+        sb.append(strSearchType).append("=").append(inputVal);
+        if (!sort.isEmpty()) {
+            sb.append("&sort=").append(sort)
+                    .append("&orderby=").append(orderBy)
+                    .append("&onlylendable=").append(onlyEnable)
+                    .append("&with_ebook=").append(withEBook);
+        }
+        sb.append("&page=").append(page);
+        return sb.toString();
     }
 }

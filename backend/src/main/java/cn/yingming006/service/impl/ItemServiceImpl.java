@@ -77,7 +77,7 @@ public class ItemServiceImpl implements ItemService {
             if (!"此书刊可能正在订购中或者处理中".equals(tbody.text())) {
                 for (Element tr : tbody) {
                     Elements tds = tr.children();
-                    String[] strings = " ".split(tds.text()); // 切割字符串
+                    String[] strings = tds.text().split(" "); // 切割字符串
                     Collection coll = new Collection(strings); // 构造一条馆藏信息
                     collections.add(coll);
                 }

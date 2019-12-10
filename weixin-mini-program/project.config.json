@@ -10,7 +10,8 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"autoAudits": false,
+		"nodeModules": false,
+		"autoAudits": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -21,13 +22,14 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
-	"appid": "wxa124387dfc7d3500",
-	"projectname": "opac-helper",
+	"libVersion": "2.8.0",
+	"appid": "wxb2496d6fcc20882e",
+	"projectname": "lib_search",
+	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
+	"scripts": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -39,13 +41,49 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
-			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/booklist/booklist",
+					"pathName": "pages/booklist/booklist",
+					"query": "title=Java",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/about/about",
+					"pathName": "pages/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "uid=0000800694",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/searchbar/searchbar",
+					"pathName": "pages/searchbar/searchbar",
+					"query": "",
+					"scene": null
+				}
+			]
 		}
 	}
 }
